@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Ysiroteno\PhpDataStructures\LinkList;
+
 class Link
 {
     private ?int $key = null;

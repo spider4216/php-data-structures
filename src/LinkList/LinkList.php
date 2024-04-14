@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/Link.php';
+namespace App\Ysiroteno\PhpDataStructures\LinkList;
 
 class LinkList
 {

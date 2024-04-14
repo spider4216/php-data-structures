@@ -11,4 +11,8 @@ $linkList = (new LinkList())
     ->insertFirst(873, 'Atyrau');
 
 echo $linkList->getAsString() . "\n\n";
+echo "Try to find 263 city...\n";
 echo $linkList->find(263) . "\n\n";
+echo "Try to delete 13698 city\n";
+$linkList->delete(13698);
+echo $linkList->getAsString() . "\n\n";

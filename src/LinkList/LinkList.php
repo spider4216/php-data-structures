@@ -61,5 +61,46 @@ class LinkList
 
         return $current->getValue();
     }
+
+    /**
+     * Delete item by key
+     *
+     * @param int $key
+     */
+    public function delete(int $key): void
+    {
+        // Текущий элемент как первый
+        $current = $this->first;
+        // Предыдущий элемент как первый
+        $previous = $this->first;
+
+        // Продолжать поиск пока не удалось найти совпадение
+        while ($current->getKey() !== $key) {
+            // Если достигли последнего элемента
+            if ($current->getNext() === null) {
+                // Выходи
+                return;
+            } else {
+                // Иначе делаем предыдущий как текущий
+                $previous = $current;
+                // а текущий как следующий
+                $current = $current->getNext();
+            }
+        }
+
+        /**
+         * Если удалось найти совпадение и оно является
+         * первым, то делаем первый как следующий
+         */
+        if ($current === $this->first) {
+            $this->first = $this->first->getNext();
+        } else {
+            /**
+             * Иначе нужно найденный элемент переписать
+             * следующим
+             */
+            $previous->setNext($current->getNext());
+        }
+    }
 }
 

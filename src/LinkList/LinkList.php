@@ -2,7 +2,7 @@
 
 namespace App\Ysiroteno\PhpDataStructures\LinkList;
 
-class LinkList
+class LinkList implements LinkListInterface
 {
     private ?Link $first = null;
 

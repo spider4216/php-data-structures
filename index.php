@@ -10,4 +10,5 @@ $linkList = (new LinkList())
     ->insertFirst(263, 'Aktobe')
     ->insertFirst(873, 'Atyrau');
 
-echo $linkList->getAsString();
+echo $linkList->getAsString() . "\n\n";
+echo $linkList->find(263) . "\n\n";

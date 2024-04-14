@@ -2,6 +2,13 @@
 
 namespace App\Ysiroteno\PhpDataStructures\LinkList;
 
+/**
+ * Элемент связанного списка. Инкапсулированный вариант,
+ * доступ к нему возможен только из общей структуры
+ * связанного списка
+ *
+ * @author ysirotenko
+ */
 class Link
 {
     private ?int $key = null;

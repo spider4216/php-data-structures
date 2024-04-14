@@ -46,5 +46,20 @@ class LinkList
     {
         return $this->getAsString();
     }
+
+    public function find(int $key): ?string
+    {
+        $current = $this->first;
+
+        while ($current->getKey() !== $key) {
+            if ($current->getNext() === null) {
+                return null;
+            } else {
+                $current = $current->getNext();
+            }
+        }
+
+        return $current->getValue();
+    }
 }
 

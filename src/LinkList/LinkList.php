@@ -4,7 +4,7 @@ namespace App\Ysiroteno\PhpDataStructures\LinkList;
 
 class LinkList implements LinkListInterface
 {
-    private ?Link $first = null;
+    protected ?Link $first = null;
 
     public function isEmpty(): bool
     {

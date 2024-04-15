@@ -57,13 +57,16 @@ class FirstLastList extends LinkList implements FirstLastListInterface
      * {@inheritDoc}
      * @see \App\Ysiroteno\PhpDataStructures\LinkList\LinkList::deleteFirst()
      */
-    public function deleteFirst(): void
+    public function deleteFirst(): string
     {
         if ($this->first->getNext() === null) {
             $this->last = null;
         }
 
+        $tmp = $this->first;
         $this->first = $this->first->getNext();
+
+        return $tmp->getValue();
     }
 }
 

@@ -23,9 +23,11 @@ class LinkList implements LinkListInterface
     /**
      * Предполагается, что список не пуст
      */
-    public function deleteFirst(): void
+    public function deleteFirst(): string
     {
+        $tmp = $this->first;
         $this->first = $this->first->getNext();
+        return $tmp->getValue();
     }
 
     public function getAsString(): string

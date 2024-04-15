@@ -5,7 +5,7 @@ interface LinkListInterface
 {
     public function insertFirst(int $key, string $value): self;
 
-    public function deleteFirst(): void;
+    public function deleteFirst(): string;
 
     public function find(int $key): ?string;
 

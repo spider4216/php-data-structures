@@ -69,7 +69,7 @@ class DoublyLinkedList extends FirstLastList implements DoublyLinkedListInterfac
      * Здесь предполагается, что список не пуст
      * отсутствует обработка на пустоту
      */
-    public function deleteFirst(): void
+    public function deleteFirst(): string
     {
         if ($this->first->getNext() === null) {
             $this->last = null;
@@ -77,7 +77,10 @@ class DoublyLinkedList extends FirstLastList implements DoublyLinkedListInterfac
             $this->first->getNext()->setPrevious(null);
         }
 
+        $tmp = $this->first;
         $this->first = $this->first->getNext();
+
+        return $tmp->getValue();
     }
 }
 

@@ -3,6 +3,7 @@
 use App\Ysiroteno\PhpDataStructures\LinkList\LinkList;
 use App\Ysiroteno\PhpDataStructures\LinkList\FirstLastList;
 use App\Ysiroteno\PhpDataStructures\LinkList\DoublyLinkedList;
+use App\Ysiroteno\PhpDataStructures\Stack\Stack;
 
 require_once __DIR__ . '/autoload_psr.php';
 
@@ -56,3 +57,16 @@ echo $doublyList->getAsString() . "\n\n";
 echo "Delete fitst...\n";
 $doublyList->deleteFirst();
 echo $doublyList->getAsString() . "\n\n";
+
+echo "Inserting in stack...\n";
+$stack = (new Stack())
+    ->push('Almaty')
+    ->push('Astana')
+    ->push('Aktobe')
+    ->push('Atyrau');
+echo $stack->getAsString() . "\n\n";
+
+echo 'Pop: ' . $stack->pop() . "\n";
+echo 'Pop: ' . $stack->pop() . "\n";
+echo 'Pop: ' . $stack->pop() . "\n";
+echo 'Pop: ' . $stack->pop() . "\n\n";

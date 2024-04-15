@@ -5,6 +5,7 @@ use App\Ysiroteno\PhpDataStructures\LinkList\FirstLastList;
 use App\Ysiroteno\PhpDataStructures\LinkList\DoublyLinkedList;
 use App\Ysiroteno\PhpDataStructures\Stack\Stack;
 use App\Ysiroteno\PhpDataStructures\Queue\Queue;
+use App\Ysiroteno\PhpDataStructures\Tree\BinaryTree;
 
 require_once __DIR__ . '/autoload_psr.php';
 
@@ -85,3 +86,18 @@ echo 'Remove: ' . $queue->remove() . "\n";
 echo 'Remove: ' . $queue->remove() . "\n";
 
 echo $queue->getAsString() . "\n\n";
+
+echo "Init binary tree...\n\n";
+
+$binaryTree = (new BinaryTree())
+    ->insert(443, 'Almaty')
+    ->insert(13698, 'Astana')
+    ->insert(263, 'Aktobe')
+    ->insert(873, 'Atyrau');
+
+echo "Output tree: \n";
+
+echo $binaryTree->inOrderCollect() . "\n\n";
+
+echo "Find 443...\n";
+echo $binaryTree->find(443) . "\n\n";

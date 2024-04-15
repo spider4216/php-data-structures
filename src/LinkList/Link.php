@@ -11,11 +11,11 @@ namespace App\Ysiroteno\PhpDataStructures\LinkList;
  */
 class Link
 {
-    private ?int $key = null;
+    protected ?int $key = null;
 
-    private ?string $value = null;
+    protected ?string $value = null;
 
-    private ?Link $next = null;
+    protected ?Link $next = null;
 
     public function __construct(int $key, string $value)
     {

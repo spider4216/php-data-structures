@@ -2,6 +2,7 @@
 
 use App\Ysiroteno\PhpDataStructures\LinkList\LinkList;
 use App\Ysiroteno\PhpDataStructures\LinkList\FirstLastList;
+use App\Ysiroteno\PhpDataStructures\LinkList\DoublyLinkedList;
 
 require_once __DIR__ . '/autoload_psr.php';
 
@@ -33,3 +34,25 @@ echo $firstLastList->getAsString() . "\n\n";
 echo "Insert in the biginning...\n";
 $firstLastList->insertFirst(443, 'Almaty');
 echo $firstLastList->getAsString() . "\n\n";
+
+echo "Fill doubly list...\n\n";
+
+$doublyList = (new DoublyLinkedList())
+    ->insertFirst(443, 'Almaty')
+    ->insertFirst(263, 'Aktobe')
+    ->insertFirst(873, 'Atyrau');
+
+echo "Echo backward...\n";
+echo $doublyList->getAsStringBackward() . "\n\n";
+echo "Echo forward...\n";
+echo $doublyList->getAsString() . "\n\n";
+
+echo "Insert last... \n\n";
+
+$doublyList->insertLast(13698, 'Astana');
+
+echo $doublyList->getAsString() . "\n\n";
+
+echo "Delete fitst...\n";
+$doublyList->deleteFirst();
+echo $doublyList->getAsString() . "\n\n";

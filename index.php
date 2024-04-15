@@ -4,6 +4,7 @@ use App\Ysiroteno\PhpDataStructures\LinkList\LinkList;
 use App\Ysiroteno\PhpDataStructures\LinkList\FirstLastList;
 use App\Ysiroteno\PhpDataStructures\LinkList\DoublyLinkedList;
 use App\Ysiroteno\PhpDataStructures\Stack\Stack;
+use App\Ysiroteno\PhpDataStructures\Queue\Queue;
 
 require_once __DIR__ . '/autoload_psr.php';
 
@@ -70,3 +71,17 @@ echo 'Pop: ' . $stack->pop() . "\n";
 echo 'Pop: ' . $stack->pop() . "\n";
 echo 'Pop: ' . $stack->pop() . "\n";
 echo 'Pop: ' . $stack->pop() . "\n\n";
+
+echo "Inserting in queue...\n";
+$queue = (new Queue())
+    ->insert('Almaty')
+    ->insert('Astana')
+    ->insert('Aktobe')
+    ->insert('Atyrau');
+
+echo $queue->getAsString() . "\n\n";
+
+echo 'Remove: ' . $queue->remove() . "\n";
+echo 'Remove: ' . $queue->remove() . "\n";
+
+echo $queue->getAsString() . "\n\n";

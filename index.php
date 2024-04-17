@@ -6,6 +6,7 @@ use App\Ysiroteno\PhpDataStructures\LinkList\DoublyLinkedList;
 use App\Ysiroteno\PhpDataStructures\Stack\Stack;
 use App\Ysiroteno\PhpDataStructures\Queue\Queue;
 use App\Ysiroteno\PhpDataStructures\Tree\BinaryTree;
+use App\Ysiroteno\PhpDataStructures\ArrayStructure\ArrayStructure;
 
 require_once __DIR__ . '/autoload_psr.php';
 
@@ -101,3 +102,22 @@ echo $binaryTree->inOrderCollect() . "\n\n";
 
 echo "Find 443...\n";
 echo $binaryTree->find(443) . "\n\n";
+
+echo "Init array with 4 capacity...\n\n";
+
+$array = (new ArrayStructure(4))
+    ->push(263)
+    ->push(443)
+    ->push(873)
+    ->push(13698);
+
+echo "Try insert over capacity...\n\n";
+
+try {
+    $array->push(999);
+} catch (\Exception $e) {
+    echo 'catch with message: ' . $e->getMessage() . "\n\n";
+}
+
+echo "find index with value 263...\n";
+echo 'Result: ' . $array->find(873) . "\n\n";

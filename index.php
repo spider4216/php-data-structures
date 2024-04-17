@@ -7,6 +7,7 @@ use App\Ysiroteno\PhpDataStructures\Stack\Stack;
 use App\Ysiroteno\PhpDataStructures\Queue\Queue;
 use App\Ysiroteno\PhpDataStructures\Tree\BinaryTree;
 use App\Ysiroteno\PhpDataStructures\ArrayStructure\ArrayStructure;
+use App\Ysiroteno\PhpDataStructures\Vector\Vector;
 
 require_once __DIR__ . '/autoload_psr.php';
 
@@ -121,3 +122,24 @@ try {
 
 echo "find index with value 263...\n";
 echo 'Result: ' . $array->find(873) . "\n\n";
+
+echo "Init vector with 4 capacity...\n\n";
+
+$vector = (new Vector(4))
+    ->push(263)
+    ->push(443)
+    ->push(873)
+    ->push(13698);
+
+echo "Try insert over capacity...\n\n";
+
+$vector
+    ->push(14698)
+    ->push(15698)
+    ->push(16698)
+    ->push(17698);
+
+echo "Push ok. vector extended automatically\n";
+
+echo "find index with value 14698...\n";
+echo 'Result: ' . $vector->find(16698) . "\n\n";

@@ -11,4 +11,3 @@ interface ArrayInterface
 
     public function filledCount(): int;
 }
-

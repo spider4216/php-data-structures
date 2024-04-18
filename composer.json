@@ -19,8 +19,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "App\\Ysiroteno\\PhpDataStructures": "src",
-            "App\\Ysiroteno\\PhpDataStructures\\Tests": "tests"
+            "App\\Ysiroteno\\PhpDataStructures\\": "src",
+            "App\\Ysiroteno\\PhpDataStructures\\Tests\\": "tests"
         }
     }
 }

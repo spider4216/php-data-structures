@@ -88,7 +88,7 @@ class ArrayStructure implements ArrayInterface
         $upSlice = $this->capacity - 1;
 
         while (true) {
-            $cursor = ($lowSlice + $upSlice) / 2;
+            $cursor = (int) (($lowSlice + $upSlice) / 2);
 
             if ($this->data[$cursor]->getValue() === $value) {
                 /**
@@ -123,5 +123,29 @@ class ArrayStructure implements ArrayInterface
             }
         }
     }
+
+    public function filledCount(): int
+    {
+        $nullIndex = 0;
+
+        while (true) {
+            if (! array_key_exists($nullIndex, $this->data)) {
+                return $nullIndex;
+            }
+
+            if ($this->data[$nullIndex] === null) {
+                return $nullIndex;
+            }
+
+            $nullIndex++;
+        }
+    }
+
+    public function capacity(): int
+    {
+        return $this->capacity;
+    }
+
+
 }
 

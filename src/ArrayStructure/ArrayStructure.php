@@ -124,6 +124,18 @@ class ArrayStructure implements ArrayInterface
         }
     }
 
+    public function linearSearch($value): ?string
+    {
+        foreach ($this->data as $key => $item) {
+            /** @var ArrayItem $item */
+            if ($item->getValue() === $value) {
+                return $key;
+            }
+        }
+
+        return null;
+    }
+
     public function filledCount(): int
     {
         $nullIndex = 0;
@@ -146,6 +158,34 @@ class ArrayStructure implements ArrayInterface
         return $this->capacity;
     }
 
-
+    public function bubbleSort(): void
+    {
+        $limit = $this->capacity - 1;
+        /**
+         * Внешний обратный цикл. Поскольку самый
+         * большой элемент оказывается в самом правом
+         * краю, каждая итерация должна уменьшать счетчик
+         * на единицу, поскольку каждый раз крайний правый
+         * элемент можно считать отсортированым
+         */
+        for ($out = $limit; $out > 0; $out--) {
+            /**
+             * Внутренний прямой цикл, перибираем до крайнего
+             * отсортированного элемента массива
+             */
+            for ($in = 0; $in < $out; $in++) {
+                /**
+                 * Если значение текущего элемента больше,
+                 * то порядок можно считать нарушенным и нужно
+                 * поменять элементы местами
+                 */
+                if ($this->data[$in] > $this->data[$in + 1]) {
+                    $temp = $this->data[$in];
+                    $this->data[$in] = $this->data[$in + 1];
+                    $this->data[$in + 1] = $temp;
+                }
+            }
+        }
+    }
 }
 

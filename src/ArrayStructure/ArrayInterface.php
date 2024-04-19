@@ -10,4 +10,6 @@ interface ArrayInterface
     public function capacity(): int;
 
     public function filledCount(): int;
+
+    public function bubbleSort(): void;
 }

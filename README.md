@@ -17,3 +17,5 @@ All of that contain base algorithm for operations with each data structure like:
 - Sort operation
 
 Many of operations covered by unit tests
+
+![image](https://github.com/spider4216/php-data-structures/assets/10693428/03d091b4-eef7-4898-b41a-89c05306f6ef)

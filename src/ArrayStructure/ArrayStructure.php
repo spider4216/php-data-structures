@@ -158,6 +158,20 @@ class ArrayStructure implements ArrayInterface
         return $this->capacity;
     }
 
+    /**
+     * Пузырьковая сортировка одна из самых не эффективных
+     * О(N в квадрате), но зато самая простая
+     *
+     * Шаги:
+     * 1.Сравнить два близжайших элемента
+     * 2.Если левое значение больше, то меняем местами элементы
+     * 3.Переход на один шаг вправо
+     * 4. Послетого как самый большой элемент оказался в самом правом краю,
+     * переходим в начало, но уже проходим на 1 элемент меньше
+     *
+     * {@inheritDoc}
+     * @see \App\Ysiroteno\PhpDataStructures\ArrayStructure\ArrayInterface::bubbleSort()
+     */
     public function bubbleSort(): void
     {
         $limit = $this->capacity - 1;

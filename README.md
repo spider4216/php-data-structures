@@ -9,7 +9,7 @@ This package provide a general data structures for PHP programming language like
 - Stack
 - Binary Tree
 
-All of that contain base algorithm for operations with each data structure like:
+All of that contain base algorithms for operations with each data structure like:
 
 - Insert operation
 - Delete operation

@@ -148,5 +148,40 @@ final class ArrayTest extends TestCase
 
         $this->assertEquals([4,3,1,2,0,5], $afterSort);
     }
+
+    public function testInsertSort(): void
+    {
+        $array = (new ArrayStructure(6))
+            ->push(14698)
+            ->push(13698)
+            ->push(443)
+            ->push(873)
+            ->push(263)
+            ->push(999949);
+
+        $beforeSort = [
+            $array->linearSearch(14698),
+            $array->linearSearch(13698),
+            $array->linearSearch(443),
+            $array->linearSearch(873),
+            $array->linearSearch(263),
+            $array->linearSearch(999949),
+        ];
+
+        $this->assertEquals([0,1,2,3,4,5], $beforeSort);
+
+        $array->insertSort();
+
+        $afterSort = [
+            $array->linearSearch(14698),
+            $array->linearSearch(13698),
+            $array->linearSearch(443),
+            $array->linearSearch(873),
+            $array->linearSearch(263),
+            $array->linearSearch(999949),
+        ];
+
+        $this->assertEquals([4,3,1,2,0,5], $afterSort);
+    }
 }
 

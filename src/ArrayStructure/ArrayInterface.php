@@ -16,4 +16,6 @@ interface ArrayInterface
     public function selectSort(): void;
 
     public function insertSort(): void;
+
+    public function linearSearch($value): ?string;
 }
